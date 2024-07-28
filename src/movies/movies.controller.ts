@@ -1,6 +1,6 @@
 import { Controller, Get, Param } from '@nestjs/common';
 import { MoviesService } from './movies.service';
-import { IMovie } from './movies.interface';
+import { IResponse } from './movies.interface';
 
 @Controller('movies')
 export class MoviesController {
@@ -14,7 +14,7 @@ export class MoviesController {
    */
 
   @Get()
-  getMovies(): Promise<IMovie[]> {
+  getMovies(): Promise<IResponse> {
     return this.moviesService.getMovies();
   }
 
@@ -27,7 +27,7 @@ export class MoviesController {
    */
 
   @Get(':id')
-  getMovie(@Param('id') id: number): Promise<IMovie> {
+  getMovie(@Param('id') id: number): Promise<IResponse> {
     return this.moviesService.getMovie(id);
   }
 }

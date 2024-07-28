@@ -12,3 +12,9 @@ export interface IMovie {
   vote_average: number;
   vote_count: number;
 }
+
+export interface IResponse {
+  response: string;
+  data: IMovie | IMovie[] | null;
+  error: string | null;
+}
